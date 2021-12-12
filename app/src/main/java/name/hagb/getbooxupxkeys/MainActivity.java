@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(getApplicationInfo().nativeLibraryDir);
         if (!forceLoad(new File("/system/priv-app/OnyxOtaService/lib/arm64/libota_jni.so")))
             return;
-        keysView.setText("\"MODEL\" = " + getProp("ro.product.model") + "\",\n" +
+        keysView.setText("\"MODEL\" = \"" + getProp("ro.product.model") + "\",\n" +
                 "\"STRING_SETTINGS\" = \"" + nativeGetSecretKey() + "\",\n" +
                 "\"STRING_UPGRADE\" = \"" + nativeGetIvParameter() + "\"\n" +
                 "# fingerprint: " + getProp("ro.vendor.build.fingerprint"));
